@@ -196,14 +196,11 @@ int framework::operator()()
 		Result = Result && this->checkError("render");
 
 		glfwPollEvents();
-		if(glfwWindowShouldClose(this->Window) || (Automated && FrameNum == 0))
+		if(glfwWindowShouldClose(this->Window))
 		{
-			if(this->Success == MATCH_TEMPLATE)
-			{
-				if(!checkTemplate(this->Window, this->Title.c_str()))
-					Result = EXIT_FAILURE;
-				this->checkError("checkTemplate");
-			}
+			if(!checkTemplate(this->Window, this->Title.c_str()))
+				Result = EXIT_FAILURE;
+			this->checkError("checkTemplate");
 			break;
 		}
 
@@ -604,57 +601,7 @@ bool framework::checkTemplate(GLFWwindow* pWindow, char const* Title)
 		}
 	}
 
-	bool Success = true;
-
-	if(Success)
-	{
-		gli::texture Template(load_png((getDataDirectory() + "templates/" + Title + ".png").c_str()));
-
-		if(Success)
-			Success = Success && !Template.empty();
-
-		bool SameSize = false;
-		if(Success)
-		{
-			SameSize = gli::texture2d(Template).extent() == TextureRGB.extent();
-			Success = Success && SameSize;
-		}
-
-		if(Success)
-		{
-			bool Pass = false;
-			if(!Pass && this->Heuristic & HEURISTIC_EQUAL_BIT)
-				Pass = compare(Template, TextureRGB, heuristic_equal());
-			if(!Pass && (this->Heuristic & HEURISTIC_ABSOLUTE_DIFFERENCE_MAX_ONE_BIT))
-				Pass = compare(Template, TextureRGB, heuristic_absolute_difference_max_one());
-			if(!Pass && (this->Heuristic & HEURISTIC_ABSOLUTE_DIFFERENCE_MAX_ONE_KERNEL_BIT))
-				Pass = compare(Template, TextureRGB, heuristic_absolute_difference_max_one_kernel());
-			if(!Pass && (this->Heuristic & HEURISTIC_ABSOLUTE_DIFFERENCE_MAX_ONE_LARGE_KERNEL_BIT))
-				Pass = compare(Template, TextureRGB, heuristic_absolute_difference_max_one_large_kernel());
-			if(!Pass && (this->Heuristic & HEURISTIC_MIPMAPS_ABSOLUTE_DIFFERENCE_MAX_ONE_BIT))
-				Pass = compare(Template, TextureRGB, heuristic_mipmaps_absolute_difference_max_one());
-			if(!Pass && (this->Heuristic & HEURISTIC_MIPMAPS_ABSOLUTE_DIFFERENCE_MAX_FOUR_BIT))
-				Pass = compare(Template, TextureRGB, heuristic_mipmaps_absolute_difference_max_four());
-			if(!Pass && (this->Heuristic & HEURISTIC_MIPMAPS_ABSOLUTE_DIFFERENCE_MAX_CHANNEL_BIT))
-				Pass = compare(Template, TextureRGB, heuristic_mipmaps_absolute_difference_max_channel());
-			Success = Pass;
-		}
-
-		// Save abs diff
-		if(!Success)
-		{
-			if(SameSize && !Template.empty())
-			{
-				gli::texture Diff = ::absolute_difference(Template, TextureRGB, 2);
-				save_png(gli::texture2d(Diff), (getBinaryDirectory() + "/" + Title + "-diff.png").c_str());
-			}
-
-			if(!Template.empty())
-				save_png(Template, (getBinaryDirectory() + "/" + Title + "-correct.png").c_str());
-
-			save_png(TextureRGB, (getBinaryDirectory() + "/" + Title + ".png").c_str());
-		}
-	}
+	save_png(TextureRGB, (getBinaryDirectory() + "/" + Title + ".png").c_str());
 
 	return Success;
 }
