@@ -1,5 +1,5 @@
 function(glCreateSampleGTC NAME)
-	set(SAMPLE_NAME ${GL_PROFILE_GTC}-${GL_VERSION_GTC}-${NAME})
+	set(SAMPLE_NAME ${NAME})
 	set(SHADER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../data)
 
 	foreach(FILE ${GL_SHADER_GTC})
