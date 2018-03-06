@@ -4,8 +4,9 @@
 
 namespace
 {
-	char const * VERT_SHADER_SOURCE("texture-float.vert");
-	char const * FRAG_SHADER_SOURCE("texture-float.frag");
+	char const* VERT_SHADER_SOURCE("texture-float.vert");
+	char const* FRAG_SHADER_SOURCE("texture-float.frag");
+	char const* DATABASE_SOURCE("squares.xml");
 
 	GLsizei const VertexCount(4);
 	GLsizeiptr const VertexSize = VertexCount * sizeof(glf::vertex_v2fv2f);
@@ -236,6 +237,8 @@ namespace
 	};
 }//namespace
 
+typedef std::vector<glm::vec4> palette;
+
 class squares : public framework
 {
 public:
@@ -247,6 +250,33 @@ public:
 	{}
 
 private:
+	void load_database(char const* Filename)
+	{
+		std::vector<palette> Palettes;
+
+		pugi::xml_document DocumentNode;
+		DocumentNode.load_file(Filename);
+
+		for (pugi::xml_node PaletteNode = DocumentNode.child("palette"); PaletteNode; PaletteNode = DocumentNode.next_sibling("palette"))
+		{
+			palette Palette;
+
+			for (pugi::xml_node ColorNode = PaletteNode.child("color"); ColorNode; ColorNode = PaletteNode.next_sibling("color"))
+			{
+				std::size_t const Index = ColorNode.attribute("index").as_uint();
+				if (Index >= Palette.size())
+					Palette.resize(Index + 1);
+
+				Palette[Index].r = ColorNode.attribute("r").as_float();
+				Palette[Index].g = ColorNode.attribute("g").as_float();
+				Palette[Index].b = ColorNode.attribute("b").as_float();
+				Palette[Index].a = ColorNode.attribute("a").as_float();
+			}
+
+			Palettes.push_back(Palette);
+		}
+	}
+
 	std::array<GLuint, buffer::MAX> BufferName;
 	GLuint VertexArrayName;
 	GLuint ProgramName;
@@ -583,6 +613,8 @@ private:
 	bool begin()
 	{
 		bool Validated = true;
+
+		this->load_database(getDataDirectory() + DATABASE_SOURCE);
 
 		if(Validated)
 			Validated = initTexture();
