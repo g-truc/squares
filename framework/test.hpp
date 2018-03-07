@@ -12,6 +12,7 @@
 #include "util.hpp"
 #include "mesh.hpp"
 #include "pugixml.hpp"
+#include "tinyxml2.h"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

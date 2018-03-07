@@ -1,3 +1,5 @@
+<?xml version="1.0" ?>
+
 <squares>
   <palette index="0">
     <color index="0" r="1.0" g="0.5" b="0.5" a="1.0" />
@@ -6,10 +8,10 @@
     <color index="3" r="0.5" g="0.7" b="1.0" a="1.0" />
   </palette>
   <palette index="1">
-    <color index="0" r="1.0" g="0.5" b="0.5" a="1.0" />
-    <color index="1" r="1.0" g="0.7" b="0.5" a="1.0" />
-    <color index="2" r="0.5" g="0.5" b="0.5" a="1.0" />
-    <color index="3" r="0.5" g="0.7" b="1.0" a="1.0" />
+    <color index="0" r="1.0" g="0.0" b="0.0" a="1.0" />
+    <color index="1" r="0.8" g="0.8" b="0.0" a="1.0" />
+    <color index="2" r="0.0" g="0.0" b="1.0" a="1.0" />
+    <color index="3" r="0.0" g="0.0" b="0.0" a="1.0" />
   </palette>
   <component palette-index="0">
     <draw column="0" row="0" color-index="0" />

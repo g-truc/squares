@@ -2,6 +2,8 @@
 #include <glm/gtc/noise.hpp>
 #include <glm/gtx/color_space.hpp>
 
+using namespace tinyxml2;
+
 namespace
 {
 	char const* VERT_SHADER_SOURCE("texture-float.vert");
@@ -237,8 +239,6 @@ namespace
 	};
 }//namespace
 
-typedef std::vector<glm::vec4> palette;
-
 class squares : public framework
 {
 public:
@@ -250,30 +250,46 @@ public:
 	{}
 
 private:
+	typedef std::vector<glm::vec4> palette;
+	std::vector<palette> Palettes;
+
+	struct draw
+	{
+		std::size_t Column;
+		std::size_t Row;
+		std::size_t ColorIndex;
+	};
+
+	typedef std::vector<draw> component;
+	std::vector<component> Components;
+
 	void load_database(char const* Filename)
 	{
-		std::vector<palette> Palettes;
+		XMLDocument Document;
+		Document.LoadFile(Filename);
 
-		pugi::xml_document DocumentNode;
-		DocumentNode.load_file(Filename);
+		XMLElement* SquaresElement = Document.FirstChildElement("squares");
 
-		for (pugi::xml_node PaletteNode = DocumentNode.child("palette"); PaletteNode; PaletteNode = DocumentNode.next_sibling("palette"))
+		for (XMLElement* PaletteElement = SquaresElement->FirstChildElement("palette"); PaletteElement; PaletteElement = PaletteElement->NextSiblingElement("palette"))
 		{
+			std::size_t const PaletteIndex = PaletteElement->IntAttribute("index");
+			if (PaletteIndex >= Palettes.size())
+				Palettes.resize(PaletteIndex + 1);
+
 			palette Palette;
-
-			for (pugi::xml_node ColorNode = PaletteNode.child("color"); ColorNode; ColorNode = PaletteNode.next_sibling("color"))
+			for (XMLElement* ColorElement = PaletteElement->FirstChildElement("color"); ColorElement; ColorElement = ColorElement->NextSiblingElement("color"))
 			{
-				std::size_t const Index = ColorNode.attribute("index").as_uint();
-				if (Index >= Palette.size())
-					Palette.resize(Index + 1);
+				std::size_t const ColorIndex = ColorElement->IntAttribute("index");
+				if (ColorIndex >= Palette.size())
+					Palette.resize(ColorIndex + 1);
 
-				Palette[Index].r = ColorNode.attribute("r").as_float();
-				Palette[Index].g = ColorNode.attribute("g").as_float();
-				Palette[Index].b = ColorNode.attribute("b").as_float();
-				Palette[Index].a = ColorNode.attribute("a").as_float();
+				Palette[ColorIndex].r = ColorElement->FloatAttribute("r");
+				Palette[ColorIndex].g = ColorElement->FloatAttribute("g");
+				Palette[ColorIndex].b = ColorElement->FloatAttribute("b");
+				Palette[ColorIndex].a = ColorElement->FloatAttribute("a");
 			}
 
-			Palettes.push_back(Palette);
+			Palettes[PaletteIndex] = Palette;
 		}
 	}
 

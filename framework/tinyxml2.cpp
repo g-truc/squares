@@ -21,7 +21,7 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
-#include "tinyxml2.hpp"
+#include "tinyxml2.h"
 
 #include <new>		// yes, this one new style header, is in the Android SDK.
 #if defined(ANDROID_NDK) || defined(__BORLANDC__) || defined(__QNXNTO__)
@@ -2037,7 +2037,7 @@ void XMLDocument::Clear()
 		DeleteNode(_unlinked[0]);	// Will remove from _unlinked as part of delete.
 	}
 
-#ifdef TINYXML2_DEBUG
+#ifdef DEBUG
     const bool hadError = Error();
 #endif
     ClearError();
@@ -2052,7 +2052,7 @@ void XMLDocument::Clear()
     _attributePool.Trace( "attribute" );
 #endif
     
-#ifdef TINYXML2_DEBUG
+#ifdef DEBUG
     if ( !hadError ) {
         TIXMLASSERT( _elementPool.CurrentAllocs()   == _elementPool.Untracked() );
         TIXMLASSERT( _attributePool.CurrentAllocs() == _attributePool.Untracked() );
@@ -2305,23 +2305,20 @@ void XMLDocument::SetError( XMLError error, int lineNum, const char* format, ...
     _errorLineNum = lineNum;
 	_errorStr.Reset();
 
-    size_t BUFFER_SIZE = 1000;
-    char* buffer = new char[BUFFER_SIZE];
+    if (format) {
+        size_t BUFFER_SIZE = 1000;
+        char* buffer = new char[BUFFER_SIZE];
+        TIXML_SNPRINTF(buffer, BUFFER_SIZE, "Error=%s ErrorID=%d (0x%x) Line number=%d: ", ErrorIDToName(error), int(error), int(error), lineNum);
+        size_t len = strlen(buffer);
 
-    TIXML_SNPRINTF(buffer, BUFFER_SIZE, "Error=%s ErrorID=%d (0x%x) Line number=%d", ErrorIDToName(error), int(error), int(error), lineNum);
+        va_list va;
+        va_start( va, format );
+        TIXML_VSNPRINTF( buffer + len, BUFFER_SIZE - len, format, va );
+        va_end( va );
 
-	if (format) {
-		size_t len = strlen(buffer);
-		TIXML_SNPRINTF(buffer + len, BUFFER_SIZE - len, ": ");
-		len = strlen(buffer);
-
-		va_list va;
-		va_start(va, format);
-		TIXML_VSNPRINTF(buffer + len, BUFFER_SIZE - len, format, va);
-		va_end(va);
-	}
-	_errorStr.SetStr(buffer);
-	delete[] buffer;
+        _errorStr.SetStr(buffer);
+        delete [] buffer;
+    }
 }
 
 
