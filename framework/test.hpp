@@ -7,11 +7,7 @@
 #include "compiler.hpp"
 #include "sementics.hpp"
 #include "vertex.hpp"
-#include "buffer.hpp"
-#include "caps.hpp"
 #include "util.hpp"
-#include "mesh.hpp"
-#include "pugixml.hpp"
 #include "tinyxml2.h"
 
 #include <GL/glew.h>
@@ -34,14 +30,6 @@
 
 #include <memory>
 #include <array>
-
-#if (GLM_COMPILER & GLM_COMPILER_VC) && (GLM_COMPILER < GLM_COMPILER_VC12)
-#	error "The OpenGL Samples Pack requires at least Visual C++ 2013"
-#endif//
-
-#if (GLM_COMPILER & GLM_COMPILER_GCC) && (GLM_COMPILER < GLM_COMPILER_GCC47)
-#	error "The OpenGL Samples Pack requires at least GCC 4.7"
-#endif//
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
@@ -276,7 +264,6 @@ protected:
 	std::string loadFile(std::string const & Filename) const;
 	void logImplementationDependentLimit(GLenum Value, std::string const & String) const;
 	bool validate(GLuint VertexArrayName, std::vector<vertexattrib> const & Expected) const;
-	bool checkError(const char* Title) const;
 	bool checkFramebuffer(GLuint FramebufferName) const;
 	bool checkExtension(char const* ExtensionName) const;
 
