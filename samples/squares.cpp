@@ -614,7 +614,7 @@ private:
 	{
 		bool Validated = true;
 
-		this->load_database(getDataDirectory() + DATABASE_SOURCE);
+		this->load_database((getDataDirectory() + DATABASE_SOURCE).c_str());
 
 		if(Validated)
 			Validated = initTexture();
