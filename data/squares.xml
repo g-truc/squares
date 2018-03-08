@@ -13,7 +13,12 @@
     <color index="2" r="0.0" g="0.0" b="1.0" a="1.0" />
     <color index="3" r="0.0" g="0.0" b="0.0" a="1.0" />
   </palette>
-  <component palette-index="0">
+  <component label="Determination" palette-index="0">
     <draw column="0" row="0" color-index="0" />
+    <draw column="0" row="1" color-index="0" />
+    <draw column="0" row="2" color-index="0" />
+    <draw column="0" row="3" color-index="0" />
+    <draw column="0" row="4" color-index="0" />
+    <draw column="0" row="5" color-index="0" />
   </component>
 </squares>

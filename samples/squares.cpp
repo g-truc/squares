@@ -260,7 +260,13 @@ private:
 		std::size_t ColorIndex;
 	};
 
-	typedef std::vector<draw> component;
+	struct component
+	{
+		std::string Label;
+		std::size_t PaletteIndex;
+		std::vector<draw> Draws;
+	};
+
 	std::vector<component> Components;
 
 	void load_database(char const* Filename)
@@ -291,6 +297,24 @@ private:
 
 			Palettes[PaletteIndex] = Palette;
 		}
+
+		for (XMLElement* ComponentElement = SquaresElement->FirstChildElement("component"); ComponentElement; ComponentElement = ComponentElement->NextSiblingElement("component"))
+		{
+			component Component;
+			Component.PaletteIndex = ComponentElement->IntAttribute("palette-index");
+			Component.Label = ComponentElement->Attribute("label");
+
+			for (XMLElement* DrawElement = ComponentElement->FirstChildElement("draw"); DrawElement; DrawElement = DrawElement->NextSiblingElement("draw"))
+			{
+				draw Draw;
+				Draw.Column = DrawElement->IntAttribute("column");
+				Draw.Row = DrawElement->IntAttribute("row");
+				Draw.ColorIndex = DrawElement->IntAttribute("color-index");
+				Component.Draws.push_back(Draw);
+			}
+
+			this->Components.push_back(Component);
+		}
 	}
 
 	std::array<GLuint, buffer::MAX> BufferName;
@@ -299,7 +323,7 @@ private:
 	GLuint TextureName;
 	GLint UniformLayer;
 
-	bool initProgram()
+	bool init_program()
 	{
 		bool Validated = true;
 	
@@ -334,7 +358,7 @@ private:
 		return Validated;
 	}
 
-	bool initBuffer()
+	bool init_buffer()
 	{
 		glGenBuffers(buffer::MAX, &BufferName[0]);
 
@@ -357,9 +381,9 @@ private:
 		return true;
 	}
 
-	typedef std::array<glm::i8vec3, 8 * 8> colorChart;
+	typedef std::array<glm::i8vec3, 8 * 8> color_chart;
 
-	glm::vec3 ContrastSaturationBrightness(glm::vec3 color, float brt, float sat, float con)
+	glm::vec3 contrast_saturation_brightness(glm::vec3 color, float brt, float sat, float con)
 	{
 		const glm::vec3 LumCoeff = glm::vec3(0.2125, 0.7154, 0.0721);
 
@@ -370,7 +394,7 @@ private:
 		return conColor;
 	}
 
-	colorChart buildColorChart(glm::u8vec3 const Color[], std::size_t const Component[])
+	color_chart build_color_chart(glm::u8vec3 const Color[], std::size_t const Component[])
 	{
 		std::array<glm::i8vec3, 8 * 8> Data;
 
@@ -386,7 +410,7 @@ private:
 		return Data;
 	}
 
-	bool initTexture()
+	bool init_texture()
 	{
 		std::size_t const Size(8);
 
@@ -497,25 +521,25 @@ private:
 
 		// Instance 3
 		{
-			colorChart const Data1 = buildColorChart(Color, Set1[0]);
+			color_chart const Data1 = build_color_chart(Color, Set1[0]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 0,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
 
-			colorChart const Data2 = buildColorChart(Color, Set1[1]);
+			color_chart const Data2 = build_color_chart(Color, Set1[1]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 1,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
 
-			colorChart const Data3 = buildColorChart(Color, Set1[2]);
+			color_chart const Data3 = build_color_chart(Color, Set1[2]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 2,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
 
-			colorChart const Data4 = buildColorChart(Color, Set1[3]);
+			color_chart const Data4 = build_color_chart(Color, Set1[3]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 3,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
@@ -524,25 +548,25 @@ private:
 
 		// Instance 4
 		{
-			colorChart const Data1 = buildColorChart(Color, Set2[0]);
+			color_chart const Data1 = build_color_chart(Color, Set2[0]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 4,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
 
-			colorChart const Data2 = buildColorChart(Color, Set2[1]);
+			color_chart const Data2 = build_color_chart(Color, Set2[1]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 5,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
 
-			colorChart const Data3 = buildColorChart(Color, Set2[2]);
+			color_chart const Data3 = build_color_chart(Color, Set2[2]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 6,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
 
-			colorChart const Data4 = buildColorChart(Color, Set2[3]);
+			color_chart const Data4 = build_color_chart(Color, Set2[3]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 7,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
@@ -551,25 +575,25 @@ private:
 
 		// Instance 5
 		{
-			colorChart const Data1 = buildColorChart(Color, Set3[0]);
+			color_chart const Data1 = build_color_chart(Color, Set3[0]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 8,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
 
-			colorChart const Data2 = buildColorChart(Color, Set3[1]);
+			color_chart const Data2 = build_color_chart(Color, Set3[1]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 9,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
 
-			colorChart const Data3 = buildColorChart(Color, Set3[2]);
+			color_chart const Data3 = build_color_chart(Color, Set3[2]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 10,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
 
-			colorChart const Data4 = buildColorChart(Color, Set3[3]);
+			color_chart const Data4 = build_color_chart(Color, Set3[3]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 11,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
@@ -578,25 +602,25 @@ private:
 
 		// Instance 6
 		{
-			colorChart const Data1 = buildColorChart(Color, Set4[0]);
+			color_chart const Data1 = build_color_chart(Color, Set4[0]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 12,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
 
-			colorChart const Data2 = buildColorChart(Color, Set4[1]);
+			color_chart const Data2 = build_color_chart(Color, Set4[1]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 13,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
 
-			colorChart const Data3 = buildColorChart(Color, Set4[2]);
+			color_chart const Data3 = build_color_chart(Color, Set4[2]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 14,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
 				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
 
-			colorChart const Data4 = buildColorChart(Color, Set4[3]);
+			color_chart const Data4 = build_color_chart(Color, Set4[3]);
 			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
 				0, 0, 15,
 				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
@@ -608,7 +632,7 @@ private:
 		return true;
 	}
 
-	bool initVertexArray()
+	bool init_vertex_array()
 	{
 		glGenVertexArrays(1, &VertexArrayName);
 		glBindVertexArray(VertexArrayName);
@@ -633,13 +657,13 @@ private:
 		this->load_database((getDataDirectory() + DATABASE_SOURCE).c_str());
 
 		if(Validated)
-			Validated = initTexture();
+			Validated = init_texture();
 		if(Validated)
-			Validated = initProgram();
+			Validated = init_program();
 		if(Validated)
-			Validated = initBuffer();
+			Validated = init_buffer();
 		if(Validated)
-			Validated = initVertexArray();
+			Validated = init_vertex_array();
 
 		{
 			glBindBuffer(GL_UNIFORM_BUFFER, BufferName[buffer::TRANSFORM]);
