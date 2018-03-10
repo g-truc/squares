@@ -55,7 +55,7 @@ class squares : public framework
 {
 public:
 	squares(int argc, char* argv[]) :
-		framework(argc, argv, "Squares", framework::CORE, 4, 5, glm::uvec2(1280)),
+		framework(argc, argv, "Squares", framework::CORE, 4, 5, glm::uvec2(2560, 640)),
 		VertexArrayName(0),
 		ProgramName(0),
 		TextureName(0)
@@ -400,14 +400,14 @@ private:
 
 		glClearBufferfv(GL_COLOR, 0, &glm::vec4(1.0f)[0]);
 
-		std::size_t const Width = 2;
-		std::size_t const Height = 2;
+		std::size_t const Width = 12;
+		std::size_t const Height = 3;
 
 		for(std::size_t y = 0; y < Height; ++y)
 		for(std::size_t x = 0; x < Width; ++x)
 		{
 			glViewport(x * WindowSize.x / Width, y * WindowSize.y / Height, WindowSize.x / Width, WindowSize.y / Height);
-			glUniform1i(UniformLayer, x + y * Width);
+			glUniform1i(UniformLayer, y + x * Height);
 			glDrawElementsInstancedBaseVertex(GL_TRIANGLES, ElementCount, GL_UNSIGNED_SHORT, 0, 1, 0);
 		}
 
