@@ -243,14 +243,14 @@ class squares : public framework
 {
 public:
 	squares(int argc, char* argv[]) :
-		framework(argc, argv, "Squares", framework::CORE, 3, 2, glm::uvec2(1280)),
+		framework(argc, argv, "Squares", framework::CORE, 4, 5, glm::uvec2(1280)),
 		VertexArrayName(0),
 		ProgramName(0),
 		TextureName(0)
 	{}
 
 private:
-	typedef std::vector<glm::vec4> palette;
+	typedef std::vector<glm::u8vec4> palette;
 	std::vector<palette> Palettes;
 
 	struct draw
@@ -289,10 +289,10 @@ private:
 				if (ColorIndex >= Palette.size())
 					Palette.resize(ColorIndex + 1);
 
-				Palette[ColorIndex].r = ColorElement->FloatAttribute("r");
-				Palette[ColorIndex].g = ColorElement->FloatAttribute("g");
-				Palette[ColorIndex].b = ColorElement->FloatAttribute("b");
-				Palette[ColorIndex].a = ColorElement->FloatAttribute("a");
+				Palette[ColorIndex].r = static_cast<unsigned char>(ColorElement->IntAttribute("r"));
+				Palette[ColorIndex].g = static_cast<unsigned char>(ColorElement->IntAttribute("g"));
+				Palette[ColorIndex].b = static_cast<unsigned char>(ColorElement->IntAttribute("b"));
+				Palette[ColorIndex].a = static_cast<unsigned char>(ColorElement->IntAttribute("a"));
 			}
 
 			Palettes[PaletteIndex] = Palette;
@@ -410,7 +410,7 @@ private:
 		return Data;
 	}
 
-	bool init_texture()
+	bool init_texture_old()
 	{
 		std::size_t const Size(8);
 
@@ -632,6 +632,46 @@ private:
 		return true;
 	}
 
+	bool init_texture()
+	{
+		std::size_t const Size(8);
+
+		glCreateTextures(GL_TEXTURE_2D_ARRAY, 1, &this->TextureName);
+
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D_ARRAY, TextureName);
+		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_BASE_LEVEL, 0);
+		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAX_LEVEL, 0);
+		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+		glTextureStorage3D(this->TextureName, 1, GL_RGBA8, Size, Size, static_cast<GLsizei>(this->Components.size()));
+
+		glm::u8vec4 const ClearColor(0, 0, 0, 255);
+		glClearTexImage(this->TextureName, 0, GL_RGBA, GL_UNSIGNED_BYTE, &ClearColor[0]);
+
+		for(std::size_t ComponentIndex = 0; ComponentIndex < this->Components.size(); ++ComponentIndex)
+		{
+			component const& Component = this->Components[ComponentIndex];
+			palette const& Palette = this->Palettes[Component.PaletteIndex];
+
+			for(std::size_t DrawIndex = 0; DrawIndex < Component.Draws.size(); ++DrawIndex)
+			{
+				draw const& Draw = Component.Draws[DrawIndex];
+				glm::u8vec4 const& SquareColor = Palette[Draw.ColorIndex];
+				glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
+					static_cast<GLint>(Draw.Row), static_cast<GLint>(Draw.Column), static_cast<GLint>(ComponentIndex),
+					1, 1, 1,
+					GL_RGBA, GL_UNSIGNED_BYTE, &SquareColor[0]);
+			}
+		}
+
+
+		return true;
+	}
+
 	bool init_vertex_array()
 	{
 		glGenVertexArrays(1, &VertexArrayName);
@@ -698,11 +738,14 @@ private:
 
 		glClearBufferfv(GL_COLOR, 0, &glm::vec4(1.0f)[0]);
 
-		for(std::size_t y = 0; y < 4; ++y)
-		for(std::size_t x = 0; x < 4; ++x)
+		std::size_t const Width = 2;
+		std::size_t const Height = 2;
+
+		for(std::size_t y = 0; y < Height; ++y)
+		for(std::size_t x = 0; x < Width; ++x)
 		{
-			glViewport(x * WindowSize.x / 4, y * WindowSize.y / 4, WindowSize.x / 4, WindowSize.y / 4);
-			glUniform1i(UniformLayer, x + y * 4);
+			glViewport(x * WindowSize.x / Width, y * WindowSize.y / Height, WindowSize.x / Width, WindowSize.y / Height);
+			glUniform1i(UniformLayer, x + y * Width);
 			glDrawElementsInstancedBaseVertex(GL_TRIANGLES, ElementCount, GL_UNSIGNED_SHORT, 0, 1, 0);
 		}
 

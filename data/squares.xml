@@ -1,24 +1,160 @@
 <?xml version="1.0" ?>
 
 <squares>
-  <palette index="0">
-    <color index="0" r="1.0" g="0.5" b="0.5" a="1.0" />
-    <color index="1" r="1.0" g="0.7" b="0.5" a="1.0" />
-    <color index="2" r="0.5" g="0.5" b="0.5" a="1.0" />
-    <color index="3" r="0.5" g="0.7" b="1.0" a="1.0" />
+  <palette index="0" label="metalic colors" colorspace="srgb" type="rgba8u">
+    <color index="0" r="225" g="113" b="135" a="255" label="metal red" />
+    <color index="1" r="217" g="140" b="68" a="255" label="rich gold" />
+    <color index="2" r="62" g="170" b="154" a="255" label="metal green" />
+    <color index="3" r="49" g="141" b="180" a="255" label="metal blue" />
   </palette>
-  <palette index="1">
-    <color index="0" r="1.0" g="0.0" b="0.0" a="1.0" />
-    <color index="1" r="0.8" g="0.8" b="0.0" a="1.0" />
-    <color index="2" r="0.0" g="0.0" b="1.0" a="1.0" />
-    <color index="3" r="0.0" g="0.0" b="0.0" a="1.0" />
-  </palette>
-  <component label="Determination" palette-index="0">
-    <draw column="0" row="0" color-index="0" />
-    <draw column="0" row="1" color-index="0" />
+
+  <component label="Alleatoire 2" palette-index="0">
+    <draw column="0" row="0" color-index="2" />
+    <draw column="0" row="1" color-index="2" />
     <draw column="0" row="2" color-index="0" />
-    <draw column="0" row="3" color-index="0" />
+    <draw column="0" row="3" color-index="1" />
     <draw column="0" row="4" color-index="0" />
     <draw column="0" row="5" color-index="0" />
+    <draw column="0" row="6" color-index="2" />
+    <draw column="0" row="7" color-index="2" />
+
+    <draw column="1" row="0" color-index="2" />
+    <draw column="1" row="1" color-index="3" />
+    <draw column="1" row="2" color-index="3" />
+    <draw column="1" row="3" color-index="0" />
+    <draw column="1" row="4" color-index="1" />
+    <draw column="1" row="5" color-index="1" />
+    <draw column="1" row="6" color-index="2" />
+    <draw column="1" row="7" color-index="3" />
+
+    <draw column="2" row="0" color-index="0" />
+    <draw column="2" row="1" color-index="2" />
+    <draw column="2" row="2" color-index="1" />
+    <draw column="2" row="3" color-index="0" />
+    <draw column="2" row="4" color-index="1" />
+    <draw column="2" row="5" color-index="0" />
+    <draw column="2" row="6" color-index="3" />
+    <draw column="2" row="7" color-index="3" />
+
+    <draw column="3" row="0" color-index="1" />
+    <draw column="3" row="1" color-index="3" />
+    <draw column="3" row="2" color-index="1" />
+    <draw column="3" row="3" color-index="3" />
+    <draw column="3" row="4" color-index="1" />
+    <draw column="3" row="5" color-index="0" />
+    <draw column="3" row="6" color-index="3" />
+    <draw column="3" row="7" color-index="3" />
+
+    <draw column="4" row="0" color-index="3" />
+    <draw column="4" row="1" color-index="1" />
+    <draw column="4" row="2" color-index="0" />
+    <draw column="4" row="3" color-index="0" />
+    <draw column="4" row="4" color-index="2" />
+    <draw column="4" row="5" color-index="1" />
+    <draw column="4" row="6" color-index="2" />
+    <draw column="4" row="7" color-index="2" />
+
+    <draw column="5" row="0" color-index="2" />
+    <draw column="5" row="1" color-index="2" />
+    <draw column="5" row="2" color-index="3" />
+    <draw column="5" row="3" color-index="0" />
+    <draw column="5" row="4" color-index="0" />
+    <draw column="5" row="5" color-index="1" />
+    <draw column="5" row="6" color-index="2" />
+    <draw column="5" row="7" color-index="2" />
+
+    <draw column="6" row="0" color-index="0" />
+    <draw column="6" row="1" color-index="3" />
+    <draw column="6" row="2" color-index="2" />
+    <draw column="6" row="3" color-index="2" />
+    <draw column="6" row="4" color-index="2" />
+    <draw column="6" row="5" color-index="0" />
+    <draw column="6" row="6" color-index="0" />
+    <draw column="6" row="7" color-index="0" />
+
+    <draw column="7" row="0" color-index="0" />
+    <draw column="7" row="1" color-index="3" />
+    <draw column="7" row="2" color-index="0" />
+    <draw column="7" row="3" color-index="3" />
+    <draw column="7" row="4" color-index="0" />
+    <draw column="7" row="5" color-index="2" />
+    <draw column="7" row="6" color-index="3" />
+    <draw column="7" row="7" color-index="1" />
+  </component>
+
+  <component label="Arbitraire 2" palette-index="0">
+    <draw column="0" row="0" color-index="2" />
+    <draw column="0" row="1" color-index="0" />
+    <draw column="0" row="2" color-index="1" />
+    <draw column="0" row="3" color-index="3" />
+    <draw column="0" row="4" color-index="2" />
+    <draw column="0" row="5" color-index="1" />
+    <draw column="0" row="6" color-index="2" />
+    <draw column="0" row="7" color-index="0" />
+
+    <draw column="1" row="0" color-index="3" />
+    <draw column="1" row="1" color-index="2" />
+    <draw column="1" row="2" color-index="1" />
+    <draw column="1" row="3" color-index="0" />
+    <draw column="1" row="4" color-index="1" />
+    <draw column="1" row="5" color-index="0" />
+    <draw column="1" row="6" color-index="3" />
+    <draw column="1" row="7" color-index="2" />
+
+    <draw column="2" row="0" color-index="3" />
+    <draw column="2" row="1" color-index="2" />
+    <draw column="2" row="2" color-index="3" />
+    <draw column="2" row="3" color-index="0" />
+    <draw column="2" row="4" color-index="1" />
+    <draw column="2" row="5" color-index="2" />
+    <draw column="2" row="6" color-index="0" />
+    <draw column="2" row="7" color-index="1" />
+
+    <draw column="3" row="0" color-index="1" />
+    <draw column="3" row="1" color-index="1" />
+    <draw column="3" row="2" color-index="0" />
+    <draw column="3" row="3" color-index="2" />
+    <draw column="3" row="4" color-index="2" />
+    <draw column="3" row="5" color-index="3" />
+    <draw column="3" row="6" color-index="0" />
+    <draw column="3" row="7" color-index="1" />
+
+    <draw column="4" row="0" color-index="0" />
+    <draw column="4" row="1" color-index="3" />
+    <draw column="4" row="2" color-index="3" />
+    <draw column="4" row="3" color-index="2" />
+    <draw column="4" row="4" color-index="0" />
+    <draw column="4" row="5" color-index="1" />
+    <draw column="4" row="6" color-index="1" />
+    <draw column="4" row="7" color-index="2" />
+
+    <draw column="5" row="0" color-index="2" />
+    <draw column="5" row="1" color-index="1" />
+    <draw column="5" row="2" color-index="0" />
+    <draw column="5" row="3" color-index="1" />
+    <draw column="5" row="4" color-index="0" />
+    <draw column="5" row="5" color-index="3" />
+    <draw column="5" row="6" color-index="2" />
+    <draw column="5" row="7" color-index="3" />
+
+    <draw column="6" row="0" color-index="1" />
+    <draw column="6" row="1" color-index="3" />
+    <draw column="6" row="2" color-index="2" />
+    <draw column="6" row="3" color-index="1" />
+    <draw column="6" row="4" color-index="2" />
+    <draw column="6" row="5" color-index="0" />
+    <draw column="6" row="6" color-index="3" />
+    <draw column="6" row="7" color-index="0" />
+
+    <draw column="7" row="0" color-index="0" />
+    <draw column="7" row="1" color-index="0" />
+    <draw column="7" row="2" color-index="2" />
+    <draw column="7" row="3" color-index="3" />
+    <draw column="7" row="4" color-index="3" />
+    <draw column="7" row="5" color-index="2" />
+    <draw column="7" row="6" color-index="1" />
+    <draw column="7" row="7" color-index="1" />
   </component>
 </squares>
+
+
