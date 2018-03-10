@@ -49,194 +49,6 @@ namespace
 			MAX
 		};
 	}//namespace shader
-
-	static std::size_t const Set1[][64] =
-	{
-		{
-			4, 0, 1, 2, 1, 7, 0, 7,
-			7, 1, 0, 5, 6, 7, 7, 3,
-			1, 5, 2, 5, 7, 2, 6, 1,
-			1, 3, 3, 3, 0, 2, 4, 0,
-			7, 5, 0, 6, 1, 2, 0, 3,
-			7, 2, 4, 1, 7, 3, 4, 3,
-			4, 3, 5, 1, 5, 2, 3, 6,
-			7, 2, 2, 2, 5, 5, 6, 6,
-		},
-		{
-			0, 2, 3, 4, 1, 6, 5, 7,
-			5, 4, 0, 5, 3, 7, 2, 1,
-			6, 7, 1, 2, 5, 4, 3, 0,
-			1, 5, 4, 3, 7, 0, 6, 2,
-			3, 6, 7, 0, 2, 1, 4, 5,
-			2, 0, 5, 1, 4, 3, 7, 6,
-			4, 1, 2, 7, 6, 5, 0, 3,
-			7, 3, 6, 5, 0, 2, 1, 4,
-		},
-		{
-			2, 3, 4, 5, 7, 2, 7, 5,
-			6, 7, 1, 3, 6, 6, 2, 0,
-			6, 7, 5, 7, 6, 6, 2, 4,
-			6, 3, 1, 7, 6, 6, 7, 1,
-			7, 0, 4, 3, 2, 2, 5, 1,
-			0, 1, 4, 5, 3, 5, 4, 1,
-			0, 0, 5, 5, 0, 4, 1, 1,
-			2, 2, 7, 5, 4, 1, 1, 4,
-		},
-		{
-			0, 7, 6, 7, 3, 6, 7, 3,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			1, 4, 0, 4, 2, 0, 4, 2,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			6, 1, 5, 1, 4, 5, 1, 4,
-		}
-	};
-
-	static std::size_t const Set2[][64] =
-	{
-		{
-			4, 0, 1, 0, 7, 1, 4, 1,
-			3, 7, 4, 7, 3, 6, 3, 0,
-			1, 6, 5, 5, 6, 1, 7, 2,
-			0, 5, 5, 4, 0, 2, 2, 1,
-			7, 5, 7, 7, 0, 1, 4, 7,
-			0, 7, 6, 7, 2, 3, 4, 6,
-			3, 1, 3, 1, 0, 5, 3, 1,
-			3, 1, 1, 0, 5, 5, 5, 3,
-		},
-		{
-			7, 3, 6, 0, 5, 4, 1, 2,
-			4, 5, 2, 1, 7, 3, 6, 0,
-			3, 6, 1, 4, 2, 0, 7, 5,
-			2, 0, 7, 5, 6, 1, 4, 3,
-			0, 7, 3, 6, 4, 5, 2, 1,
-			5, 1, 4, 2, 3, 6, 0, 7,
-			6, 2, 0, 3, 1, 7, 5, 4,
-			1, 4, 5, 7, 0, 2, 3, 6
-		},
-		{
-			2, 3, 4, 5, 7, 2, 7, 5,
-			6, 7, 1, 3, 6, 6, 2, 0,
-			6, 7, 5, 7, 6, 6, 2, 4,
-			6, 3, 1, 7, 6, 6, 7, 1,
-			7, 0, 4, 3, 2, 2, 5, 1,
-			0, 1, 4, 5, 3, 5, 4, 1,
-			0, 0, 5, 5, 0, 4, 1, 1,
-			2, 2, 7, 5, 4, 1, 1, 4,
-		},
-		{
-			0, 7, 6, 7, 3, 6, 7, 3,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			1, 4, 0, 4, 2, 0, 4, 2,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			6, 1, 5, 1, 4, 5, 1, 4,
-		}
-	};
-
-	static std::size_t const Set3[][64] =
-	{
-		{
-			0, 4, 3, 4, 7, 2, 6, 5,
-			3, 3, 5, 1, 2, 0, 3, 1,
-			0, 2, 3, 2, 5, 3, 7, 4,
-			3, 2, 5, 4, 3, 7, 3, 6,
-			1, 7, 6, 1, 0, 6, 2, 3,
-			2, 7, 1, 4, 5, 0, 4, 5,
-			6, 6, 3, 3, 4, 5, 5, 4,
-			1, 6, 4, 4, 3, 4, 3, 3,
-		},
-		{
-			6, 0, 7, 3, 2, 4, 5, 1,
-			4, 1, 2, 5, 0, 7, 3, 6,
-			7, 3, 5, 6, 4, 1, 0, 2,
-			2, 7, 4, 0, 1, 3, 6, 5,
-			0, 5, 1, 7, 6, 2, 4, 3,
-			1, 2, 3, 4, 5, 6, 7, 0,
-			5, 4, 6, 2, 3, 0, 1, 7,
-			3, 6, 0, 1, 7, 5, 2, 4
-		},
-		{
-			2, 3, 4, 5, 7, 2, 7, 5,
-			6, 7, 1, 3, 6, 6, 2, 0,
-			6, 7, 5, 7, 6, 6, 2, 4,
-			6, 3, 1, 7, 6, 6, 7, 1,
-			7, 0, 4, 3, 2, 2, 5, 1,
-			0, 1, 4, 5, 3, 5, 4, 1,
-			0, 0, 5, 5, 0, 4, 1, 1,
-			2, 2, 7, 5, 4, 1, 1, 4,
-		},
-		{
-			0, 7, 6, 7, 3, 6, 7, 3,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			1, 4, 0, 4, 2, 0, 4, 2,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			6, 1, 5, 1, 4, 5, 1, 4,
-		}
-	};
-
-	static std::size_t const Set4[][64] =
-	{
-		{
-			2, 4, 7, 5, 0, 1, 6, 0,
-			0, 5, 7, 0, 6, 1, 0, 3,
-			3, 7, 3, 0, 6, 6, 4, 1,
-			7, 5, 0, 4, 6, 0, 7, 2,
-			4, 3, 6, 6, 5, 3, 6, 0,
-			3, 2, 2, 1, 6, 0, 1, 2,
-			2, 4, 6, 4, 1, 7, 6, 3,
-			2, 5, 7, 6, 2, 5, 6, 1,
-		},
-		{
-			6, 7, 2, 3, 1, 5, 0, 4,
-			4, 3, 0, 5, 7, 6, 1, 2,
-			1, 5, 7, 6, 2, 4, 0, 3,
-			0, 2, 1, 4, 3, 7, 6, 5,
-			3, 4, 6, 2, 5, 0, 7, 1,
-			7, 0, 5, 1, 4, 3, 2, 6,
-			2, 6, 4, 7, 0, 1, 5, 3,
-			5, 1, 3, 0, 6, 2, 4, 7,
-		},
-/*
-		{
-			0, 7, 1, 5, 3, 6, 2, 4,
-			3, 6, 0, 1, 5, 2, 4, 7,
-			4, 2, 3, 7, 0, 1, 5, 6,
-			5, 3, 6, 4, 2, 7, 0, 1,
-			7, 0, 2, 3, 1, 4, 6, 5,
-			6, 5, 4, 0, 7, 3, 1, 2,
-			2, 1, 5, 6, 4, 0, 7, 3,
-			1, 4, 7, 2, 6, 5, 3, 0,
-		},
-*/
-		{
-			2, 3, 4, 5, 7, 2, 7, 5,
-			6, 7, 1, 3, 6, 6, 2, 0,
-			6, 7, 5, 7, 6, 6, 2, 4,
-			6, 3, 1, 7, 6, 6, 7, 1,
-			7, 0, 4, 3, 2, 2, 5, 1,
-			0, 1, 4, 5, 3, 5, 4, 1,
-			0, 0, 5, 5, 0, 4, 1, 1,
-			2, 2, 7, 5, 4, 1, 1, 4,
-		},
-		{
-			0, 7, 6, 7, 3, 6, 7, 3,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			1, 4, 0, 4, 2, 0, 4, 2,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			3, 5, 4, 5, 0, 4, 5, 0,
-			2, 6, 3, 6, 1, 3, 6, 1,
-			6, 1, 5, 1, 4, 5, 1, 4,
-		}
-	};
 }//namespace
 
 class squares : public framework
@@ -348,11 +160,8 @@ private:
 		if (Validated)
 		{
 			glUniformBlockBinding(ProgramName, glGetUniformBlockIndex(ProgramName, "transform"), semantic::uniform::TRANSFORM0);
-
-			glUseProgram(ProgramName);
-			glUniform1i(glGetUniformLocation(ProgramName, "Diffuse"), 0);
+			glProgramUniform1i(ProgramName, glGetUniformLocation(ProgramName, "Diffuse"), 0);
 			this->UniformLayer = glGetUniformLocation(ProgramName, "Layer");
-			glUseProgram(0);
 		}
 
 		return Validated;
@@ -360,23 +169,16 @@ private:
 
 	bool init_buffer()
 	{
-		glGenBuffers(buffer::MAX, &BufferName[0]);
-
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, BufferName[buffer::ELEMENT]);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, ElementSize, ElementData, GL_STATIC_DRAW);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
-		glBindBuffer(GL_ARRAY_BUFFER, BufferName[buffer::VERTEX]);
-		glBufferData(GL_ARRAY_BUFFER, VertexSize, VertexData, GL_STATIC_DRAW);
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
-
 		GLint UniformBufferOffset(0);
 		glGetIntegerv(GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT, &UniformBufferOffset);
-		GLint UniformBlockSize = glm::max(GLint(sizeof(glm::mat4)), UniformBufferOffset);
+		GLint const UniformBlockSize = glm::max(GLint(sizeof(glm::mat4)), UniformBufferOffset);
 
-		glBindBuffer(GL_UNIFORM_BUFFER, BufferName[buffer::TRANSFORM]);
-		glBufferData(GL_UNIFORM_BUFFER, UniformBlockSize, nullptr, GL_DYNAMIC_DRAW);
-		glBindBuffer(GL_UNIFORM_BUFFER, 0);
+		glm::mat4 const MVP = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, -1.0f, 1.0f);
+
+		glCreateBuffers(buffer::MAX, &BufferName[0]);
+		glNamedBufferStorage(BufferName[buffer::ELEMENT], ElementSize, ElementData, 0);
+		glNamedBufferStorage(BufferName[buffer::VERTEX], VertexSize, VertexData, 0);
+		glNamedBufferStorage(BufferName[buffer::TRANSFORM], UniformBlockSize, &MVP[0][0], 0);
 
 		return true;
 	}
@@ -502,133 +304,6 @@ private:
 			glm::saturation(1.00f, glm::vec3(255,  128,   0) / 255.0f) * 255.0f,		// 7
 		};
 
-		float const Scale = 0.1f;
-
-		glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-
-		glGenTextures(1, &TextureName);
-
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D_ARRAY, TextureName);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_BASE_LEVEL, 0);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAX_LEVEL, 0);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-		glTexImage3D(GL_TEXTURE_2D_ARRAY, 0, GL_RGB8, Size, Size, 16, 0, GL_RGB, GL_UNSIGNED_BYTE, nullptr);
-
-		// Instance 3
-		{
-			color_chart const Data1 = build_color_chart(Color, Set1[0]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 0,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
-
-			color_chart const Data2 = build_color_chart(Color, Set1[1]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 1,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
-
-			color_chart const Data3 = build_color_chart(Color, Set1[2]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 2,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
-
-			color_chart const Data4 = build_color_chart(Color, Set1[3]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 3,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data4[0]);
-		}
-
-		// Instance 4
-		{
-			color_chart const Data1 = build_color_chart(Color, Set2[0]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 4,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
-
-			color_chart const Data2 = build_color_chart(Color, Set2[1]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 5,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
-
-			color_chart const Data3 = build_color_chart(Color, Set2[2]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 6,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
-
-			color_chart const Data4 = build_color_chart(Color, Set2[3]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 7,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data4[0]);
-		}
-
-		// Instance 5
-		{
-			color_chart const Data1 = build_color_chart(Color, Set3[0]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 8,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
-
-			color_chart const Data2 = build_color_chart(Color, Set3[1]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 9,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
-
-			color_chart const Data3 = build_color_chart(Color, Set3[2]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 10,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
-
-			color_chart const Data4 = build_color_chart(Color, Set3[3]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 11,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data4[0]);
-		}
-
-		// Instance 6
-		{
-			color_chart const Data1 = build_color_chart(Color, Set4[0]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 12,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data1[0]);
-
-			color_chart const Data2 = build_color_chart(Color, Set4[1]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 13,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data2[0]);
-
-			color_chart const Data3 = build_color_chart(Color, Set4[2]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 14,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data3[0]);
-
-			color_chart const Data4 = build_color_chart(Color, Set4[3]);
-			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
-				0, 0, 15,
-				static_cast<GLsizei>(Size), static_cast<GLsizei>(Size), 1,
-				GL_RGB, GL_UNSIGNED_BYTE, &Data4[0]);
-		}
-
-		glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
-
 		return true;
 	}
 
@@ -637,16 +312,12 @@ private:
 		std::size_t const Size(8);
 
 		glCreateTextures(GL_TEXTURE_2D_ARRAY, 1, &this->TextureName);
-
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D_ARRAY, TextureName);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_BASE_LEVEL, 0);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAX_LEVEL, 0);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-		glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
+		glTextureParameteri(this->TextureName, GL_TEXTURE_BASE_LEVEL, 0);
+		glTextureParameteri(this->TextureName, GL_TEXTURE_MAX_LEVEL, 0);
+		glTextureParameteri(this->TextureName, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTextureParameteri(this->TextureName, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTextureParameteri(this->TextureName, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTextureParameteri(this->TextureName, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 		glTextureStorage3D(this->TextureName, 1, GL_RGBA8, Size, Size, static_cast<GLsizei>(this->Components.size()));
 
 		glm::u8vec4 const ClearColor(0, 0, 0, 255);
@@ -661,7 +332,7 @@ private:
 			{
 				draw const& Draw = Component.Draws[DrawIndex];
 				glm::u8vec4 const& SquareColor = Palette[Draw.ColorIndex];
-				glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0,
+				glTextureSubImage3D(this->TextureName, 0,
 					static_cast<GLint>(Draw.Row), static_cast<GLint>(Draw.Column), static_cast<GLint>(ComponentIndex),
 					1, 1, 1,
 					GL_RGBA, GL_UNSIGNED_BYTE, &SquareColor[0]);
@@ -674,8 +345,8 @@ private:
 
 	bool init_vertex_array()
 	{
-		glGenVertexArrays(1, &VertexArrayName);
-		glBindVertexArray(VertexArrayName);
+		glCreateVertexArrays(1, &this->VertexArrayName);
+		glBindVertexArray(this->VertexArrayName);
 		glBindBuffer(GL_ARRAY_BUFFER, BufferName[buffer::VERTEX]);
 		glVertexAttribPointer(semantic::attr::POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(glf::vertex_v2fv2f), BUFFER_OFFSET(0));
 		glVertexAttribPointer(semantic::attr::TEXCOORD, 2, GL_FLOAT, GL_FALSE, sizeof(glf::vertex_v2fv2f), BUFFER_OFFSET(sizeof(glm::vec2)));
@@ -697,25 +368,16 @@ private:
 		this->load_database((getDataDirectory() + DATABASE_SOURCE).c_str());
 
 		if(Validated)
-			Validated = init_texture();
+			Validated = this->init_texture();
 		if(Validated)
-			Validated = init_program();
+			Validated = this->init_program();
 		if(Validated)
-			Validated = init_buffer();
+			Validated = this->init_buffer();
 		if(Validated)
-			Validated = init_vertex_array();
-
-		{
-			glBindBuffer(GL_UNIFORM_BUFFER, BufferName[buffer::TRANSFORM]);
-			glm::mat4* Pointer = reinterpret_cast<glm::mat4*>(glMapBufferRange(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), GL_MAP_WRITE_BIT | GL_MAP_INVALIDATE_BUFFER_BIT));
-			*Pointer = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, -1.0f, 1.0f);
-			glUnmapBuffer(GL_UNIFORM_BUFFER);
-		}
+			Validated = this->init_vertex_array();
 
 		glUseProgram(ProgramName);
-
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D_ARRAY, TextureName);
+		glBindTextureUnit(0, TextureName);
 		glBindBufferBase(GL_UNIFORM_BUFFER, semantic::uniform::TRANSFORM0, BufferName[buffer::TRANSFORM]);
 		glBindVertexArray(VertexArrayName);
 
