@@ -8,7 +8,12 @@ namespace
 {
 	char const* VERT_SHADER_SOURCE("texture-float.vert");
 	char const* FRAG_SHADER_SOURCE("texture-float.frag");
-	char const* DATABASE_SOURCE("squares.xml");
+
+	//char const* DATABASE_SOURCE("aleatoire.xml");
+	char const* DATABASE_SOURCE("arbitraire.xml");
+	//char const* DATABASE_SOURCE("correlation.xml");
+	//char const* DATABASE_SOURCE("determination.xml");
+	//char const* DATABASE_SOURCE("squares.xml");
 
 	GLsizei const VertexCount(4);
 	GLsizeiptr const VertexSize = VertexCount * sizeof(glf::vertex_v2fv2f);
@@ -55,7 +60,7 @@ class squares : public framework
 {
 public:
 	squares(int argc, char* argv[]) :
-		framework(argc, argv, "Squares", framework::CORE, 4, 5, glm::uvec2(2400, 800)),
+		framework(argc, argv, "Squares", framework::CORE, 4, 5, glm::uvec2(600, 800)),
 		VertexArrayName(0),
 		ProgramName(0),
 		TextureName(0)
@@ -400,7 +405,7 @@ private:
 
 		glClearBufferfv(GL_COLOR, 0, &glm::vec4(1.0f)[0]);
 
-		std::size_t const Width = 12;
+		std::size_t const Width = 3;
 		std::size_t const Height = 4;
 
 		for(std::size_t y = 0; y < Height; ++y)
