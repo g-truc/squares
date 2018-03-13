@@ -15,77 +15,77 @@
   </palette>
 
   <component label="Arbitraire 1-1" palette-index="0">
-    <draw column="0" row="0" color-index="3" />
+    <draw column="0" row="0" color-index="0" />
     <draw column="0" row="1" color-index="1" />
-    <draw column="0" row="2" color-index="0" />
+    <draw column="0" row="2" color-index="3" />
     <draw column="0" row="3" color-index="2" />
     <draw column="0" row="4" color-index="0" />
     <draw column="0" row="5" color-index="3" />
-    <draw column="0" row="6" color-index="1" />
-    <draw column="0" row="7" color-index="2" />
+    <draw column="0" row="6" color-index="2" />
+    <draw column="0" row="7" color-index="1" />
 
     <draw column="1" row="0" color-index="2" />
-    <draw column="1" row="1" color-index="0" />
-    <draw column="1" row="2" color-index="1" />
+    <draw column="1" row="1" color-index="2" />
+    <draw column="1" row="2" color-index="0" />
     <draw column="1" row="3" color-index="3" />
-    <draw column="1" row="4" color-index="3" />
-    <draw column="1" row="5" color-index="2" />
-    <draw column="1" row="6" color-index="0" />
-    <draw column="1" row="7" color-index="1" />
+    <draw column="1" row="4" color-index="1" />
+    <draw column="1" row="5" color-index="3" />
+    <draw column="1" row="6" color-index="1" />
+    <draw column="1" row="7" color-index="0" />
 
-    <draw column="2" row="0" color-index="1" />
+    <draw column="2" row="0" color-index="3" />
     <draw column="2" row="1" color-index="3" />
-    <draw column="2" row="2" color-index="2" />
-    <draw column="2" row="3" color-index="0" />
+    <draw column="2" row="2" color-index="0" />
+    <draw column="2" row="3" color-index="1" />
     <draw column="2" row="4" color-index="2" />
-    <draw column="2" row="5" color-index="1" />
-    <draw column="2" row="6" color-index="3" />
+    <draw column="2" row="5" color-index="2" />
+    <draw column="2" row="6" color-index="1" />
     <draw column="2" row="7" color-index="0" />
 
     <draw column="3" row="0" color-index="0" />
-    <draw column="3" row="1" color-index="2" />
-    <draw column="3" row="2" color-index="3" />
+    <draw column="3" row="1" color-index="1" />
+    <draw column="3" row="2" color-index="2" />
     <draw column="3" row="3" color-index="1" />
-    <draw column="3" row="4" color-index="1" />
+    <draw column="3" row="4" color-index="3" />
     <draw column="3" row="5" color-index="0" />
     <draw column="3" row="6" color-index="2" />
     <draw column="3" row="7" color-index="3" />
 
-    <draw column="4" row="0" color-index="0" />
-    <draw column="4" row="1" color-index="3" />
-    <draw column="4" row="2" color-index="2" />
-    <draw column="4" row="3" color-index="1" />
-    <draw column="4" row="4" color-index="2" />
+    <draw column="4" row="0" color-index="1" />
+    <draw column="4" row="1" color-index="2" />
+    <draw column="4" row="2" color-index="3" />
+    <draw column="4" row="3" color-index="0" />
+    <draw column="4" row="4" color-index="1" />
     <draw column="4" row="5" color-index="0" />
     <draw column="4" row="6" color-index="3" />
-    <draw column="4" row="7" color-index="1" />
+    <draw column="4" row="7" color-index="2" />
 
-    <draw column="5" row="0" color-index="3" />
-    <draw column="5" row="1" color-index="2" />
-    <draw column="5" row="2" color-index="1" />
+    <draw column="5" row="0" color-index="1" />
+    <draw column="5" row="1" color-index="0" />
+    <draw column="5" row="2" color-index="2" />
     <draw column="5" row="3" color-index="0" />
-    <draw column="5" row="4" color-index="3" />
-    <draw column="5" row="5" color-index="2" />
-    <draw column="5" row="6" color-index="1" />
-    <draw column="5" row="7" color-index="0" />
+    <draw column="5" row="4" color-index="2" />
+    <draw column="5" row="5" color-index="1" />
+    <draw column="5" row="6" color-index="3" />
+    <draw column="5" row="7" color-index="3" />
 
     <draw column="6" row="0" color-index="2" />
-    <draw column="6" row="1" color-index="1" />
-    <draw column="6" row="2" color-index="0" />
+    <draw column="6" row="1" color-index="0" />
+    <draw column="6" row="2" color-index="1" />
     <draw column="6" row="3" color-index="3" />
-    <draw column="6" row="4" color-index="1" />
-    <draw column="6" row="5" color-index="3" />
+    <draw column="6" row="4" color-index="3" />
+    <draw column="6" row="5" color-index="2" />
     <draw column="6" row="6" color-index="0" />
-    <draw column="6" row="7" color-index="2" />
+    <draw column="6" row="7" color-index="1" />
 
-    <draw column="7" row="0" color-index="1" />
-    <draw column="7" row="1" color-index="0" />
+    <draw column="7" row="0" color-index="3" />
+    <draw column="7" row="1" color-index="1" />
     <draw column="7" row="2" color-index="3" />
     <draw column="7" row="3" color-index="2" />
     <draw column="7" row="4" color-index="0" />
     <draw column="7" row="5" color-index="1" />
-    <draw column="7" row="6" color-index="2" />
-    <draw column="7" row="7" color-index="3" />
+    <draw column="7" row="6" color-index="0" />
+    <draw column="7" row="7" color-index="2" />
   </component>
 
   <component label="Arbitraire 1-2" palette-index="0">
@@ -93,7 +93,7 @@
     <draw column="0" row="1" color-index="0" />
     <draw column="0" row="2" color-index="1" />
     <draw column="0" row="3" color-index="3" />
-    <draw column="0" row="4" color-index="2" />
+    <draw column="0" row="4" color-index="3" />
     <draw column="0" row="5" color-index="1" />
     <draw column="0" row="6" color-index="2" />
     <draw column="0" row="7" color-index="0" />
@@ -110,37 +110,37 @@
     <draw column="2" row="0" color-index="3" />
     <draw column="2" row="1" color-index="2" />
     <draw column="2" row="2" color-index="3" />
-    <draw column="2" row="3" color-index="0" />
-    <draw column="2" row="4" color-index="1" />
+    <draw column="2" row="3" color-index="1" />
+    <draw column="2" row="4" color-index="0" />
     <draw column="2" row="5" color-index="2" />
     <draw column="2" row="6" color-index="0" />
     <draw column="2" row="7" color-index="1" />
 
     <draw column="3" row="0" color-index="1" />
-    <draw column="3" row="1" color-index="1" />
+    <draw column="3" row="1" color-index="3" />
     <draw column="3" row="2" color-index="0" />
-    <draw column="3" row="3" color-index="2" />
+    <draw column="3" row="3" color-index="0" />
     <draw column="3" row="4" color-index="2" />
-    <draw column="3" row="5" color-index="3" />
-    <draw column="3" row="6" color-index="0" />
-    <draw column="3" row="7" color-index="1" />
+    <draw column="3" row="5" color-index="1" />
+    <draw column="3" row="6" color-index="2" />
+    <draw column="3" row="7" color-index="3" />
 
     <draw column="4" row="0" color-index="0" />
-    <draw column="4" row="1" color-index="3" />
+    <draw column="4" row="1" color-index="1" />
     <draw column="4" row="2" color-index="3" />
     <draw column="4" row="3" color-index="2" />
     <draw column="4" row="4" color-index="0" />
-    <draw column="4" row="5" color-index="1" />
+    <draw column="4" row="5" color-index="3" />
     <draw column="4" row="6" color-index="1" />
     <draw column="4" row="7" color-index="2" />
 
     <draw column="5" row="0" color-index="2" />
     <draw column="5" row="1" color-index="1" />
     <draw column="5" row="2" color-index="0" />
-    <draw column="5" row="3" color-index="1" />
-    <draw column="5" row="4" color-index="0" />
+    <draw column="5" row="3" color-index="2" />
+    <draw column="5" row="4" color-index="1" />
     <draw column="5" row="5" color-index="3" />
-    <draw column="5" row="6" color-index="2" />
+    <draw column="5" row="6" color-index="0" />
     <draw column="5" row="7" color-index="3" />
 
     <draw column="6" row="0" color-index="1" />
@@ -264,20 +264,20 @@
     <draw column="2" row="6" color-index="0" />
     <draw column="2" row="7" color-index="3" />
 
-    <draw column="3" row="0" color-index="3" />
+    <draw column="3" row="0" color-index="2" />
     <draw column="3" row="1" color-index="3" />
     <draw column="3" row="2" color-index="0" />
     <draw column="3" row="3" color-index="1" />
-    <draw column="3" row="4" color-index="2" />
+    <draw column="3" row="4" color-index="3" />
     <draw column="3" row="5" color-index="2" />
     <draw column="3" row="6" color-index="0" />
     <draw column="3" row="7" color-index="1" />
 
-    <draw column="4" row="0" color-index="2" />
+    <draw column="4" row="0" color-index="3" />
     <draw column="4" row="1" color-index="1" />
     <draw column="4" row="2" color-index="2" />
     <draw column="4" row="3" color-index="0" />
-    <draw column="4" row="4" color-index="3" />
+    <draw column="4" row="4" color-index="2" />
     <draw column="4" row="5" color-index="0" />
     <draw column="4" row="6" color-index="3" />
     <draw column="4" row="7" color-index="1" />
@@ -420,7 +420,7 @@
     <draw column="3" row="4" color-index="2" />
     <draw column="3" row="5" color-index="3" />
     <draw column="3" row="6" color-index="0" />
-    <draw column="3" row="7" color-index="1" />
+    <draw column="3" row="7" color-index="3" />
 
     <draw column="4" row="0" color-index="0" />
     <draw column="4" row="1" color-index="3" />
@@ -553,12 +553,12 @@
     <draw column="1" row="7" color-index="2" />
 
     <draw column="2" row="0" color-index="0" />
-    <draw column="2" row="1" color-index="2" />
+    <draw column="2" row="1" color-index="0" />
     <draw column="2" row="2" color-index="1" />
     <draw column="2" row="3" color-index="3" />
     <draw column="2" row="4" color-index="2" />
     <draw column="2" row="5" color-index="1" />
-    <draw column="2" row="6" color-index="0" />
+    <draw column="2" row="6" color-index="2" />
     <draw column="2" row="7" color-index="3" />
 
     <draw column="3" row="0" color-index="3" />
@@ -580,12 +580,12 @@
     <draw column="4" row="7" color-index="1" />
 
     <draw column="5" row="0" color-index="1" />
-    <draw column="5" row="1" color-index="0" />
+    <draw column="5" row="1" color-index="2" />
     <draw column="5" row="2" color-index="3" />
     <draw column="5" row="3" color-index="2" />
     <draw column="5" row="4" color-index="3" />
     <draw column="5" row="5" color-index="1" />
-    <draw column="5" row="6" color-index="2" />
+    <draw column="5" row="6" color-index="0" />
     <draw column="5" row="7" color-index="0" />
 
     <draw column="6" row="0" color-index="2" />
@@ -749,7 +749,7 @@
     <draw column="7" row="0" color-index="0" />
     <draw column="7" row="1" color-index="2" />
     <draw column="7" row="2" color-index="2" />
-    <draw column="7" row="3" color-index="3" />
+    <draw column="7" row="3" color-index="1" />
     <draw column="7" row="4" color-index="3" />
     <draw column="7" row="5" color-index="2" />
     <draw column="7" row="6" color-index="1" />
@@ -775,9 +775,9 @@
     <draw column="1" row="6" color-index="2" />
     <draw column="1" row="7" color-index="0" />
 
-    <draw column="2" row="0" color-index="2" />
+    <draw column="2" row="0" color-index="3" />
     <draw column="2" row="1" color-index="1" />
-    <draw column="2" row="2" color-index="3" />
+    <draw column="2" row="2" color-index="2" />
     <draw column="2" row="3" color-index="0" />
     <draw column="2" row="4" color-index="0" />
     <draw column="2" row="5" color-index="0" />
@@ -805,11 +805,11 @@
     <draw column="5" row="0" color-index="1" />
     <draw column="5" row="1" color-index="2" />
     <draw column="5" row="2" color-index="2" />
-    <draw column="5" row="3" color-index="3" />
+    <draw column="5" row="3" color-index="2" />
     <draw column="5" row="4" color-index="0" />
     <draw column="5" row="5" color-index="0" />
     <draw column="5" row="6" color-index="0" />
-    <draw column="5" row="7" color-index="2" />
+    <draw column="5" row="7" color-index="3" />
 
     <draw column="6" row="0" color-index="2" />
     <draw column="6" row="1" color-index="2" />
@@ -831,13 +831,13 @@
   </component>
   
   <component label="Arbitraire 3-4" palette-index="0">
-    <draw column="0" row="0" color-index="0" />
+    <draw column="0" row="0" color-index="1" />
     <draw column="0" row="1" color-index="3" />
     <draw column="0" row="2" color-index="0" />
     <draw column="0" row="3" color-index="2" />
     <draw column="0" row="4" color-index="0" />
     <draw column="0" row="5" color-index="3" />
-    <draw column="0" row="6" color-index="1" />
+    <draw column="0" row="6" color-index="0" />
     <draw column="0" row="7" color-index="3" />
 
     <draw column="1" row="0" color-index="3" />
@@ -850,12 +850,12 @@
     <draw column="1" row="7" color-index="2" />
 
     <draw column="2" row="0" color-index="0" />
-    <draw column="2" row="1" color-index="2" />
+    <draw column="2" row="1" color-index="0" />
     <draw column="2" row="2" color-index="1" />
     <draw column="2" row="3" color-index="3" />
     <draw column="2" row="4" color-index="3" />
     <draw column="2" row="5" color-index="0" />
-    <draw column="2" row="6" color-index="0" />
+    <draw column="2" row="6" color-index="2" />
     <draw column="2" row="7" color-index="3" />
 
     <draw column="3" row="0" color-index="3" />
@@ -877,12 +877,12 @@
     <draw column="4" row="7" color-index="0" />
 
     <draw column="5" row="0" color-index="0" />
-    <draw column="5" row="1" color-index="0" />
+    <draw column="5" row="1" color-index="2" />
     <draw column="5" row="2" color-index="3" />
     <draw column="5" row="3" color-index="3" />
     <draw column="5" row="4" color-index="3" />
     <draw column="5" row="5" color-index="1" />
-    <draw column="5" row="6" color-index="2" />
+    <draw column="5" row="6" color-index="0" />
     <draw column="5" row="7" color-index="0" />
 
     <draw column="6" row="0" color-index="2" />
