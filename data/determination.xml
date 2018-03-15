@@ -802,8 +802,8 @@
     <draw column="3" row="3" color-index="2" />
     <draw column="3" row="4" color-index="1" />
     <draw column="3" row="5" color-index="0" />
-    <draw column="3" row="6" color-index="2" />
-    <draw column="3" row="7" color-index="1" />
+    <draw column="3" row="6" color-index="3" />
+    <draw column="3" row="7" color-index="0" />
 
     <draw column="4" row="0" color-index="0" />
     <draw column="4" row="1" color-index="1" />
