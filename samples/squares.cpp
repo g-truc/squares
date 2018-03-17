@@ -9,10 +9,14 @@ namespace
 	char const* VERT_SHADER_SOURCE("texture-float.vert");
 	char const* FRAG_SHADER_SOURCE("texture-float.frag");
 
-	//char const* DATABASE_SOURCE("aleatoire.xml");
-	//char const* DATABASE_SOURCE("arbitraire.xml");
-	char const* DATABASE_SOURCE("correlation.xml");
-	//char const* DATABASE_SOURCE("determination.xml");
+	//char const* DATABASE_SOURCE("aleatoire-nouveaute.xml");
+	//char const* DATABASE_SOURCE("aleatoire-evolution.xml");
+	//char const* DATABASE_SOURCE("arbitraire-nouveaute.xml");
+	//char const* DATABASE_SOURCE("arbitraire-evolution.xml");
+	//char const* DATABASE_SOURCE("correlation-nouveaute.xml");
+	char const* DATABASE_SOURCE("correlation-evolution.xml");
+	//char const* DATABASE_SOURCE("determination-nouveaute.xml");
+	//char const* DATABASE_SOURCE("determination-evolution.xml");
 	//char const* DATABASE_SOURCE("squares.xml");
 
 	GLsizei const VertexCount(4);
